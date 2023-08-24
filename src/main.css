@@ -6,11 +6,13 @@
 .header-section {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(237, 221, 221);
-    margin: 15px;
+    background-color: #FE6F27;
+    margin: 10px;
     text-align: center;
     flex-wrap: wrap;
-    border: 2px solid black;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -24,6 +26,10 @@
     /* height : 100%; */
     border-radius: 50%;
 }
+.logo:hover{
+    transform: scale(0.95);
+    transition: 0.2s ease-in-out;
+}
 .nav-list{
     display: flex;
     text-align: center;
@@ -32,6 +38,10 @@
     margin: 20px;
     list-style: none;
     font-size: larger;
+    color: black;
+}
+.nav-list >.item:hover{
+    transform: scale(1.08);
 }
 .restaurant-list{
     display: flex;
@@ -40,10 +50,17 @@
     
 }
 .card {
-    width: 250px;
-    border: 1px solid black;
+    width: 200px;
+    border: none;
     margin: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 .card > .img{
     width: 100%
@@ -51,4 +68,52 @@
 .card > .img >.img-card{
     width:100%;
     border-radius: 10px;
+}
+.searchBox{
+    display: flex;
+    justify-content: center;
+}
+.input-area{
+    margin-right: 5px;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+    background-color:#2F2F2F;
+    color: whitesmoke;
+    font-weight: bold;
+    width:40%;
+}
+.search-btn{
+    border-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FE6F27;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.search-btn:hover{
+    cursor: pointer;
+    background-color:#2F2F2F;
+    color:whitesmoke;
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+.footer-section{
+    text-align: center;
+    background-color: #FE6F27;
+    padding: 20px 0;
+    margin: 10px;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+.text-a{
+    text-decoration: none;
+    
+}
+.text-a:hover{
+    color:white;
 }

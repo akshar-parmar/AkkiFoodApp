@@ -17,7 +17,8 @@ const RestaurantList = ()=>{
     return (
         <>
         <div className="searchBox">
-            <input type="text"
+            <input className="input-area"
+            type="text"
              placeholder="search"
               value={searchInput}
               onChange={(e)=>setSearchInput(e.target.value)}

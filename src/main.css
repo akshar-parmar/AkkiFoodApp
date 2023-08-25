@@ -43,6 +43,11 @@
 .nav-list >.item:hover{
     transform: scale(1.08);
 }
+.wrapperForListAndLoginbtn{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 .restaurant-list{
     display: flex;
     flex-wrap: wrap;
@@ -116,4 +121,23 @@
 }
 .text-a:hover{
     color:white;
+}
+
+.login-logout-btn{
+    border-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2F2F2F;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color:white;
+    margin-right:10px;
+    height: 50px;
+}
+
+.login-logout-btn:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

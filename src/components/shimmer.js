@@ -1,14 +1,24 @@
-import React from 'react'
-import { Image, Breathing   } from 'react-shimmer'
-export const ShimmerUI= () =>{
-    return (
-        <div>
-            <Image
-                src='https://csshint.com/wp-content/uploads/2022/01/Css-Skeleton-Loader-Animation.jpg'
-                fallback={<Breathing  width={1500} height={600} />}
-            />
-        </div>
-    )
-}
+export const ShimmerUI = () => {
+  return (
+    <div className="restaurant-list">
+      {Array(15)
+        .fill(1)
+        .map(() => {
+          return (
+            <div className="shimme-div">
+              <div className="shimmer-card">
+                <div className="shimmer-img">
+                </div>
+                <div className ="shimmer-card-text">
+                    <div className="shimmer-dummy-text"></div>
+                    <div className="shimmer-dummy-text"></div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+    </div>
+  );
+};
 
 export default ShimmerUI;

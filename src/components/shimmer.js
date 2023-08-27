@@ -3,9 +3,9 @@ export const ShimmerUI = () => {
     <div className="restaurant-list">
       {Array(15)
         .fill(1)
-        .map(() => {
+        .map((e,index) => {
           return (
-            <div className="shimme-div">
+            <div key = {index} className="shimme-div">
               <div className="shimmer-card">
                 <div className="shimmer-img">
                 </div>

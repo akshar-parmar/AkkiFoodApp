@@ -1,6 +1,7 @@
 //Header Component
 import React, { useState } from 'react';
 import {Title} from './title';
+import { Link } from 'react-router-dom';
 
 function checkLoggedIn(){
 //let say it return true always
@@ -14,9 +15,9 @@ return true;
             <Title/>
             <div className='wrapperForListAndLoginbtn'>
             <ul className = "nav-list">
-                <li className = "item">About</li>
-                <li className = "item">Service</li>
-                <li className = "item">Cart</li>
+                <li className = "item"><Link to="/about">About</Link></li>
+                <li className = "item"><Link to="/service">Service</Link></li>
+                <li className = "item"><Link to="/">Cart</Link></li>
             </ul>
             { isLoggedIn===false?
             (<button className='login-logout-btn' onClick={()=>{

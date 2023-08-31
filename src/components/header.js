@@ -15,9 +15,9 @@ return true;
             <Title/>
             <div className='wrapperForListAndLoginbtn'>
             <ul className = "nav-list">
-                <li className = "item"><Link to="/about">About</Link></li>
-                <li className = "item"><Link to="/service">Service</Link></li>
-                <li className = "item"><Link to="/">Cart</Link></li>
+                <li className = "item"><Link to="/about" className='list-item-link'>About</Link></li>
+                <li className = "item"><Link to="/service" className='list-item-link'>Service</Link></li>
+                <li className = "item"><Link to="/" className='list-item-link'>Cart</Link></li>
             </ul>
             { isLoggedIn===false?
             (<button className='login-logout-btn' onClick={()=>{

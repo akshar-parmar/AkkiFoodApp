@@ -8,6 +8,7 @@ import {
 } from "./config";
 import { baseUrlForCardImage } from "./config";
 import ShimmerUI from "./shimmer";
+import {RestaurantMenuCard} from "./restaurant-menu-card";
 
 const RestaurantMenu = () => {
   const { id } = useParams(); //call use param and get the id using object destructuring
@@ -28,8 +29,8 @@ const RestaurantMenu = () => {
           ?.map((x) => x.card)
           ?.find((x) => x && x.card["@type"] === RESTAURANT_TYPE_KEY)?.card
           ?.info || null;
-      console.log(restaurantData);
       setRestaurantMenu(restaurantData);
+
 
       // Set menu item data
       const menuItemsData =
@@ -49,7 +50,7 @@ const RestaurantMenu = () => {
         }
       });
       setMenuItems(uniqueMenuItems);
-      //console.log(uniqueMenuItems);
+      menuObj = uniqueMenuItems[0];
     } catch (error) {
       console.log("not able to fetch restaurant menu data");
     }
@@ -77,6 +78,14 @@ const RestaurantMenu = () => {
             <h4 className = "summary max-time">{restaurant.sla.slaString}</h4>
             </div>
         </div>
+      </div>
+      
+      <div className="restaurant-menu-list">
+        {menuItems.map((item)=>{
+          return <RestaurantMenuCard data ={item}/>
+        })
+        }
+
       </div>
     </div>
   );

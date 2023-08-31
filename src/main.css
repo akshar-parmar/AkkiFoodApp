@@ -261,3 +261,34 @@
     height: 20px;
     background-color: white;
 }
+.restaurant-menu-list{
+}
+.menu-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.description-menu{
+    width: 35%;
+}
+.img-menu-div{
+    width: 100px;
+    height: 100px;
+    margin-left:100px
+}
+.img-item{
+    width: 100%;
+}
+.description-item {
+    color: #ada6a6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+hr{
+    width: 50%;
+    margin: auto;
+    margin-top:20px;
+}

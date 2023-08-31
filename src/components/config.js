@@ -1,7 +1,7 @@
 export const baseUrlForCardImage = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 export const getCardURL  = "https://www.swiggy.com/mapi/homepage/getCards?lat=19.3031105&lng=72.8611588";
-export const fetchMenuURL = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.3031105&lng=72.8611588&restaurantId=";
+
 
 
 // Image CDN URL for Restaurant card
@@ -18,8 +18,9 @@ export const swiggy_api_URL =
 
 // Swiggy API to get Restaurant Menu data with corsproxy
 export const swiggy_menu_api_URL =
-"https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
+"https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.3031105&lng=72.8611588&&submitAction=ENTER&restaurantId=";
 
+export const fetchMenuURL = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.3031105&lng=72.8611588&restaurantId=";
 // shimmer card unit
 export const shimmer_card_unit = 20;
 

@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,700;1,900&display=swap');
+
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .header-section {
     display: flex;
@@ -209,4 +213,51 @@
     height: 20px;
     background-color: rgb(222, 219, 219);
     margin:10px;
+}
+.container-menu{
+    width: 100%;
+    height: 100%;
+}
+.restaurant-banner{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+.img-container{
+    width:300px;
+    height: 200px;
+    margin-top:50px;
+}
+.img-restaurant{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+.restaurant-summary{
+    margin-top:50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    flex-wrap: wrap;
+}
+.cuisine-item {
+    color: #ada6a6;
+}
+
+.restaurant-rating-details{
+    width: 350px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.line-span{
+    width: 2.5px;
+    height: 20px;
+    background-color: white;
 }

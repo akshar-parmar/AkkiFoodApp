@@ -23,7 +23,6 @@ const Body = () => {
   async function getRestaurantList() {
     try {
       //api call
-      console.log("api call");
       const response = await fetch(swiggy_api_URL);
       const json = await response.json();
 
@@ -85,7 +84,11 @@ const Body = () => {
         ) : (
           filteredRestaurantList.map((obj) => {
             return (
-              <Link to={"/restaurant/"+ obj.info.id} className="cardLink">
+              <Link
+                to={"/restaurant/" + obj.info.id}
+                className="cardLink"
+                key={obj.info.id}
+              >
                 {" "}
                 <RestaurantCard data={obj.info} key={obj.info.id} />
               </Link>

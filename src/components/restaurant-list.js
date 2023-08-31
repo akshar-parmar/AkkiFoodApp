@@ -1,8 +1,7 @@
 import { RestaurantCard } from "./restaurant-card";
 import { ShimmerUI } from "./shimmer";
-import restaurantList from "./config";
 import { useState, useEffect } from "react";
-import { getCardURL } from "./config";
+import { getCardURL, swiggy_api_URL } from "./config";
 import { Link } from "react-router-dom";
 
 //filter the data
@@ -16,7 +15,7 @@ function filterData(searchInput, RestaurantList) {
 }
 
 //RestaurantList component
-const RestaurantList = () => {
+const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
@@ -24,15 +23,29 @@ const RestaurantList = () => {
   async function getRestaurantList() {
     try {
       //api call
-      const response = await fetch(getCardURL);
+      console.log("api call");
+      const response = await fetch(swiggy_api_URL);
       const json = await response.json();
-      //optional chaining
-      const Restaurantdata =
-        json?.data?.success?.cards?.[4]?.gridWidget?.gridElements?.infoWithStyle
-          ?.restaurants;
-      //console.log(Restaurantdata);
-      setAllRestaurantList(Restaurantdata);
-      setfilteredRestaurantList(Restaurantdata);
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        //why for loop because the restaurant data is fluctuating, card[3], card[4] kisi mein bhi aa sakta
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+          // initialize checkData for Swiggy Restaurant data
+          let checkData =
+            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+      setAllRestaurantList(resData);
+      setfilteredRestaurantList(resData);
     } catch (error) {
       throw new Error("Not able to fetch the Data from API call");
     }
@@ -42,14 +55,6 @@ const RestaurantList = () => {
     getRestaurantList();
     //console.log("inside hook");
   }, []);
-
-  //console.log("render()");
-
-  //conditional rendering
-  //initially we have passed [] array to RestaurantList
-  //so when length of RestaurantList is 0, then render shimmerUI
-  //once the api call gets complete and we have data then ,
-  //RestaurantList length will not be 0 so in that case render else part
 
   return allRestaurantList.length == 0 ? (
     <ShimmerUI />
@@ -75,19 +80,20 @@ const RestaurantList = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredRestaurantList.length == 0 ? 
-        (
+        {filteredRestaurantList.length == 0 ? (
           <h1>No matching restaurant</h1>
-        ) 
-        : 
-        (
+        ) : (
           filteredRestaurantList.map((obj) => {
-            return <Link to = {"/restaurant/" +obj.info.id}> <RestaurantCard data={obj.info} key={obj.info.id} /></Link>
+            return (
+              <Link to={"/restaurant/" + obj.info.id}>
+                {" "}
+                <RestaurantCard data={obj.info} key={obj.info.id} />
+              </Link>
+            );
           })
-        )
-        }
+        )}
       </div>
     </>
   );
 };
-export default RestaurantList;
+export default Body;

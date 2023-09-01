@@ -82,10 +82,11 @@ const RestaurantMenu = () => {
       
       <div className="restaurant-menu-list">
         {menuItems.map((item)=>{
-          if(item.price!=NaN){
+          if(item?.price!= undefined){
+            return <RestaurantMenuCard data ={item}/>
+          }else if(item?.defaultPrice!= undefined){
             return <RestaurantMenuCard data ={item}/>
           }
-          
         })
         }
 

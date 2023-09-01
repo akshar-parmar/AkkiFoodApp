@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Title = ()=>{
     return (
         <div className="img-div">
-        <Link to ="/"><img className="logo" src={logo1}></img></Link>
+        <a href ="/"><img className="logo" src={logo1}></img></a>
         </div> 
     )
 }

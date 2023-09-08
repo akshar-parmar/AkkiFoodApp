@@ -1,4 +1,4 @@
-import { baseUrlForCardImage } from "./config";
+import { baseUrlForCardImage } from "../config";
 
 export const RestaurantCard = (props) => {
   //destructuring the props object

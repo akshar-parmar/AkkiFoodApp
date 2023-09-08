@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMG_CDN_URL } from './config';
+import { IMG_CDN_URL } from '../config';
 export const RestaurantMenuCard = (props) => {
     const {description,name,price,imageId,defaultPrice}= props.data;
     let finalPrice = 0;

@@ -1,5 +1,5 @@
-import { RestaurantCard } from "./restaurant-card";
-import { ShimmerUI } from "./shimmer";
+import { RestaurantCard } from "./Restaurant-card";
+import { ShimmerUI } from "./Shimmer";
 import { useState, useEffect } from "react";
 import { getCardURL, swiggy_api_URL } from "./config";
 import { Link } from "react-router-dom";
@@ -16,6 +16,8 @@ function filterData(searchInput, RestaurantList) {
 
 //RestaurantList component
 const Body = () => {
+  
+
   const [searchInput, setSearchInput] = useState("");
   const [allRestaurantList, setAllRestaurantList] = useState([]);
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);

@@ -7,8 +7,8 @@ import {
   MENU_ITEM_TYPE_KEY,
 } from "./config";
 import { baseUrlForCardImage } from "./config";
-import ShimmerUI from "./shimmer";
-import {RestaurantMenuCard} from "./restaurant-menu-card";
+import ShimmerUI from "./Shimmer";
+import {RestaurantMenuCard} from "./Restaurant-menu-card";
 
 const RestaurantMenu = () => {
   const { id } = useParams(); //call use param and get the id using object destructuring

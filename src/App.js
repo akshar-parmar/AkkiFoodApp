@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {Header} from "./components/header";
-import Footer from "./components/footer";
-import Body from "./components/restaurant-list";
-import { About } from "./components/about";
-import { Service } from "./components/service";
+import {Header} from "./components/Header";
+import Footer from "./components/Footer";
+import Body from "./components/Restaurant-list";
+import { About } from "./components/About";
+import { Service } from "./components/Service";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { Error } from "./components/error";
-import RestaurantMenu from "./components/restaurant-menu";
+import { Error } from "./components/Error";
+import RestaurantMenu from "./components/Restaurant-menu";
+import ProfileClassComponent from "./components/ProfileClassComponent";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 const AppLayout = ()=>{
@@ -28,7 +29,11 @@ const appRouter = createBrowserRouter([
         children : [
             {
                 path : "/about",
-                element : <About/>
+                element : <About/>,
+                children : [{
+                    path: "profile",
+                    element : <ProfileClassComponent/>
+                }]
             },
             {
                 path: '/service',

@@ -266,8 +266,7 @@
     height: 20px;
     background-color: white;
 }
-.restaurant-menu-list{
-}
+
 .menu-card-container{
     display: flex;
     justify-content: center;
@@ -303,6 +302,7 @@ hr{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 .about-left{
     font-size: 30px;
@@ -377,6 +377,7 @@ hr{
 
 .err-message-div {
     margin-top: 10px;
+    text-align: center;
 }
 
 a{
@@ -387,5 +388,41 @@ color: black;
 background-color: #FE6F27;
 padding: 10px;
 border-radius: 5px;
+width: 200px;
+margin-left: 45px;
 }
 
+.parent-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-profile{
+    border: none;
+    background-color:#2F2F2F;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+.profile-class-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#e5dede;
+    width: 500px;
+    height: 500px;
+}
+#profile-img{
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    /* background-color: #FE6F27; */
+}
+#my-profile-img{
+width: 100%;
+height: 100%;
+border-radius: 50%;
+}
+.profileDetail{
+    margin-top: 50px;
+}

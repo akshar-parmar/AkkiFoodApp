@@ -1,6 +1,6 @@
 //Header Component
 import React, { useState } from 'react';
-import {Title} from './title';
+import {Title} from './Title';
 import { Link } from 'react-router-dom';
 
 function checkLoggedIn(){

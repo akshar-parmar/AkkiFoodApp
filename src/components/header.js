@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import {Title} from './Title';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 function checkLoggedIn(){
 //let say it return true always
@@ -9,8 +10,10 @@ return true;
 }
  export const Header = ()=>{
     const[isLoggedIn, setIsLoggedIn] = useState(checkLoggedIn());
-
+    const isOnline = useOnlineStatus();
+    console.log("render");
     return (
+        
         <header className="header-section">
             <Title/>
             <div className='wrapperForListAndLoginbtn'>
@@ -28,6 +31,7 @@ return true;
                 setIsLoggedIn(false);
             }}>Logout</button>)
             }
+            <p>{isOnline==true ? '✅': '🔴'}</p>
             </div>
 
         </header>

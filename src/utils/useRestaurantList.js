@@ -1,4 +1,4 @@
-import {swiggy_api_URL } from "../config";
+import {swiggy_api_URL } from "../components/config";
 import {useEffect, useState} from 'react';
 const useRestaurantList = (setfilteredRestaurantList)=>{
     //state

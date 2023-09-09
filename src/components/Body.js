@@ -4,16 +4,25 @@ import { useState} from "react";
 import { Link } from "react-router-dom";
 import {filterData} from '../utils/helper';
 import useRestaurantList from "../utils/useRestaurantList";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //RestaurantList component
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
+
+
   // console.log("calling useRestaurantList Hook.......!");
   const allRestaurantList = useRestaurantList(setfilteredRestaurantList);
   // console.log(allRestaurantList);
+  const isOnline = useOnlineStatus();
+  //early return
+  if(isOnline==false)
+  return (
+    <h1> 🔴You are offline, Please check your Internet Connection!</h1>
+  )
 
-  // console.log("render");
+  console.log("render");
   return allRestaurantList.length == 0 ? (
     <ShimmerUI />
   ) : (

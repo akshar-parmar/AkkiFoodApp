@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { baseUrlForCardImage } from "../config";
+import { baseUrlForCardImage } from "./config";
 import ShimmerUI from "./Shimmer";
 import {RestaurantMenuCard} from "./Restaurant-menu-card";
 import useRestaurant from "../utils/useRestaurant";

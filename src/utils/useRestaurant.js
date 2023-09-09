@@ -3,7 +3,7 @@ import {
     RESTAURANT_TYPE_KEY,
     swiggy_menu_api_URL,
     MENU_ITEM_TYPE_KEY,
-  } from "../config";
+  } from "../components/config";
 
 const useRestaurant = (id) => {
     

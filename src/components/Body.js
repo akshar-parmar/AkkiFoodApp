@@ -1,5 +1,5 @@
 import { RestaurantCard } from "./Restaurant-card";
-import { ShimmerUI } from "./Shimmer";
+import  ShimmerUI from "./Shimmer";
 import { useState} from "react";
 import { Link } from "react-router-dom";
 import {filterData} from '../utils/helper';
@@ -22,7 +22,7 @@ const Body = () => {
     <h1> 🔴You are offline, Please check your Internet Connection!</h1>
   )
 
-  console.log("render");
+  //console.log("render");
   return allRestaurantList.length == 0 ? (
     <ShimmerUI />
   ) : (

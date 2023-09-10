@@ -1,4 +1,4 @@
-export const ShimmerUI = () => {
+const ShimmerUI = () => {
   return (
     <div className="restaurant-list">
       {Array(15)

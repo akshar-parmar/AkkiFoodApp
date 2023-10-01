@@ -426,3 +426,9 @@ border-radius: 50%;
 .profileDetail{
     margin-top: 50px;
 }
+
+.sectionInstamart{
+    border : 1px solid gray;
+    padding : 20px;
+    margin : 10px;
+}

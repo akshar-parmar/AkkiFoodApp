@@ -12,7 +12,7 @@ import ProfileClassComponent from "./components/ProfileClassComponent";
 import ShimmerUI from "./components/Shimmer";
 
 //we are lazy loading the instamart component.
-const Instamart = React.lazy(()=>import("./components/Instamart"));
+const Instamart = lazy(()=>import('./components/Instamart'));
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 const AppLayout = ()=>{
@@ -54,8 +54,8 @@ const appRouter = createBrowserRouter([
             {
                 path : '/instamart',
                 element : <Suspense fallback = {<ShimmerUI/>}>
-                    <Instamart/>
-                    </Suspense>
+                              <Instamart/>
+                          </Suspense>
             }
         ],
     },

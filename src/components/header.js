@@ -1,15 +1,18 @@
 //Header Component
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import {Title} from './Title';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import Instamart from './Instamart';
+import UserContext from '../utils/UserContext';
 
 function checkLoggedIn(){
 //let say it return true always
 return true;
 }
  export const Header = ()=>{
+    const {user} = useContext(UserContext);
+    console.log(user);
     const[isLoggedIn, setIsLoggedIn] = useState(checkLoggedIn());
     const isOnline = useOnlineStatus();
    // console.log("render");
@@ -24,6 +27,7 @@ return true;
                 <li className = "item"><Link to="/" className='list-item-link'>Cart</Link></li>
                 <li className = "item"><Link to="/instamart" className='list-item-link'>Instamart</Link></li>
             </ul>
+            <p>{user.name}</p>
             { isLoggedIn===false?
             (<button className='login-logout-btn' onClick={()=>{
                 setIsLoggedIn(true);

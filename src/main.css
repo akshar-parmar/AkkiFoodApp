@@ -431,4 +431,27 @@ border-radius: 50%;
     border : 1px solid gray;
     padding : 20px;
     margin : 10px;
+    
 }
+
+.Instamart-container{
+    width: 100%;
+    background-color: #fdf6f6;
+}
+.sectionInstamart button{
+    border: none;
+    background-color:#2F2F2F;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.sectionInstamart h1{
+   color: #FE6F27;
+
+}
+.sectionInstamart p{
+    color: #2F2F2F;
+    margin:10px;
+ 
+ }

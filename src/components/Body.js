@@ -7,7 +7,7 @@ import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 //RestaurantList component
-const Body = ({user}) => {
+const Body = () => {
   // console.log(user);
   const [searchInput, setSearchInput] = useState("");
   const [filteredRestaurantList, setfilteredRestaurantList] = useState([]);
@@ -59,7 +59,7 @@ const Body = ({user}) => {
                 key={obj.info.id}
               >
                 {" "}
-                <RestaurantCard data={obj.info} key={obj.info.id} user = {user}/>
+                <RestaurantCard data={obj.info} key={obj.info.id} />
               </Link>
             );
           })

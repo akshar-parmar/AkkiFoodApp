@@ -40,6 +40,7 @@
 .nav-list{
     display: flex;
     text-align: center;
+    margin-right: 20px;
 }
 .nav-list > .item{
     margin: 20px;
@@ -52,7 +53,6 @@
 }
 .nav-list >.item:hover{
     transform: scale(1.08);
-    background-color: #2F2F2F;
     color:aliceblue;
 }
 .list-item-link{
@@ -455,3 +455,25 @@ border-radius: 50%;
     margin:10px;
  
  }
+ .FoodItemSection{
+    display : flex;
+    flex-wrap: wrap;
+ }
+ .clear-cart-btn {
+    border-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2F2F2F;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color:white;
+    margin : 10px;
+    height: 50px;
+ }
+
+.clear-cart-btn:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

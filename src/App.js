@@ -10,24 +10,24 @@ import { Error } from "./components/Error";
 import RestaurantMenu from "./components/Restaurant-menu";
 import ProfileClassComponent from "./components/ProfileClassComponent";
 import ShimmerUI from "./components/Shimmer";
+import {Provider} from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 //we are lazy loading the instamart component.
 const Instamart = lazy(()=>import('./components/Instamart'));
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 const AppLayout = ()=>{
-    const [user,setUser] = useState({
-        name : "Namaste React",
-        email : "namastesupport@gmail.com"
-    });
+
     return (
-        <>
-        <Header/>
-        <Outlet/>
-        <Footer/>
-        </>
+        <Provider store = {store}>
+            <Header/>
+            <Outlet/>
+            <Footer/>
+        </Provider>
     );
-}
+}   
 
 const appRouter = createBrowserRouter([
     {
@@ -49,8 +49,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path : '/',
-                element : <Body user = {{name : "Namaste React",
-                email : "namastesupport@gmail.com"}}/>
+                element : <Body/>
             },
             {
                 path : '/restaurant/:id',
@@ -61,6 +60,10 @@ const appRouter = createBrowserRouter([
                 element : <Suspense fallback = {<ShimmerUI/>}>
                               <Instamart/>
                           </Suspense>
+            },
+            {
+                path : '/cart',
+                element : <Cart/>
             }
         ],
     },

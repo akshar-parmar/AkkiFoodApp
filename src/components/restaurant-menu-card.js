@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IMG_CDN_URL } from './config';
-import { addItem } from '../utils/cartSlice';
-import { useDispatch } from 'react-redux';
+import { addItem,removeItem } from '../utils/cartSlice';
+import { useDispatch,useSelector } from 'react-redux';
 export const RestaurantMenuCard = (props) => {
+    
     const itemObj = props.data;
-    const {description,name,price,imageId,defaultPrice}= props.data;
+    const {description,name,price,imageId,defaultPrice,id}= props.data;
+    const cartItems = useSelector(store=>store.cart.items);
+    const [itemPresent,setItemPresent] = useState(false);
+    
     const dispatch = useDispatch();
     let finalPrice = 0;
     if(props?.data?.price==undefined){
@@ -16,6 +20,10 @@ export const RestaurantMenuCard = (props) => {
     const addFoodItem = (itemObj)=>{
         dispatch(addItem(itemObj));
     }
+    
+    const handleRemoveItem = ()=>{
+      dispatch(removeItem(id));
+    }
   return (
     <>
     <div className='menu-card-container'>
@@ -26,7 +34,20 @@ export const RestaurantMenuCard = (props) => {
         </div>
         <div className='img-menu-div'>
             <img className="img-item" src={IMG_CDN_URL+imageId} alt='menu-item-image'></img>
-            <button onClick = {()=>addFoodItem(itemObj)}> + Add Item</button>
+            <div className = "add-remove-btn-container">
+            <button className = "add-item-btn" onClick = {()=>addFoodItem(itemObj)}>add+</button>
+            {
+                cartItems.some((obj)=>{
+                    return obj.id == id;
+                }) ?
+                (
+                <button className="clear-cart-btn" onClick = {()=>{handleRemoveItem()}}>remove-</button>
+                )
+                :
+                (<></>)
+            }
+            </div>
+
         </div>
     </div>
     <hr/>

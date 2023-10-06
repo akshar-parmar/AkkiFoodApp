@@ -1,8 +1,14 @@
+import { useDispatch } from "react-redux";
 import { baseUrlForCardImage } from "./config";
+import {removeItem} from "../utils/cartSlice";
 
 export const FootItem = (props) => {
-    
-  const {name,price,imageId,defaultPrice,isVeg} = props.data;
+  const {name,price,imageId,defaultPrice,isVeg,id} = props.data;
+  
+  const dispatch = useDispatch();
+  const handleRemoveItem = ()=>{
+    dispatch(removeItem(id));
+  }
   return (
     
     <div className="card">
@@ -14,11 +20,13 @@ export const FootItem = (props) => {
               >
               </img>
             <h4 className="nameRestaurant" key = "heading">{name}</h4>
-            <br></br>
+            
             <p>{isVeg ? "🟢veg" : "🔴Non-veg"}</p>
-            <br></br>
-            <p>{isNaN(price/100)?300 : price/100}/-</p>
+            
+            <h4>₹ {isNaN(price/100)?300 : price/100}/-</h4>
+            <button className="clear-cart-btn" onClick = {()=>{handleRemoveItem()}}>remove item</button>
       </div>
+      
     </div>
   );
 };

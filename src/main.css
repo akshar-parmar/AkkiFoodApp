@@ -108,6 +108,10 @@
     border: none;
     border-radius: 5px;
     font-size: small;
+    height: 25px;
+    text-align: center;
+    padding: 5px;
+    color : white
 }
 .low-rating{
     background-color: rgb(255, 34, 34);
@@ -508,4 +512,37 @@ border-radius: 50%;
     display : flex;
     justify-content: center;
     align-items: center;
+}
+.veg-nonveg-img{
+    width : 30px;
+    height: 30px;
+}
+.food-item-container{
+    width : 300px;
+    height : 300px;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+    border: none;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.img-food-container{
+    width : 200px;
+    height : 150px;
+    border-radius: 10px;
+}
+.img-food{
+    width: 100%;
+    border-radius: 10px;
+}
+.description-food-item{
+    margin-top: 15px;
+    display : flex;
+}
+.price-food-item{
+    margin: 10px;
 }

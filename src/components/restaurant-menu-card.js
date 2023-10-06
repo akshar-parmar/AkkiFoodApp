@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { IMG_CDN_URL } from './config';
 import { addItem,removeItem } from '../utils/cartSlice';
 import { useDispatch,useSelector } from 'react-redux';
+import veg from "../../images/veg.png";
+import nonveg from "../../images/non-veg.png";
 export const RestaurantMenuCard = (props) => {
-    
     const itemObj = props.data;
-    const {description,name,price,imageId,defaultPrice,id}= props.data;
+    const {description,name,price,imageId,defaultPrice,id,isVeg}= props.data;
     const cartItems = useSelector(store=>store.cart.items);
     const [itemPresent,setItemPresent] = useState(false);
     
@@ -28,7 +29,16 @@ export const RestaurantMenuCard = (props) => {
     <>
     <div className='menu-card-container'>
         <div className='description-menu'>
-            <h3>{name}</h3>
+            <h3>
+                <p>
+                {isVeg ? 
+                <img className = "veg-nonveg-img" src={veg}></img>
+                : 
+                <img className = "veg-nonveg-img" src={nonveg}></img>
+                }
+                </p>
+                {name}
+            </h3>
             <p className='description-item'>{description}</p>
             <h3>₹{finalPrice/100}/-</h3>
         </div>

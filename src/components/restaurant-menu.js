@@ -3,6 +3,8 @@ import { baseUrlForCardImage } from "./config";
 import ShimmerUI from "./Shimmer";
 import {RestaurantMenuCard} from "./Restaurant-menu-card";
 import useRestaurant from "../utils/useRestaurant";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 const RestaurantMenu = () => {
   const { id } = useParams(); //call use param and get the id using object destructuring
@@ -24,7 +26,7 @@ const RestaurantMenu = () => {
           <h1>{restaurant.name}</h1>
           <p className="cuisine-item">{restaurant.cuisines.join(", ")}</p>
             <div className="restaurant-rating-details">
-            <h4 className={`summary rating ${restaurant.avgRatingString < 4 ? 'low-rating' : ''}`} key = "rating-heading">🌟{restaurant.avgRatingString} stars</h4>
+            <h4 className={`summary rating ${restaurant.avgRatingString < 4 ? 'low-rating' : ''}`} key = "rating-heading"><FontAwesomeIcon icon={faStar} style={{ color: 'white' }} /> {restaurant.avgRatingString}</h4>
             <span className="line-span"></span>
             <h4 className = "summary cost-two">{restaurant.costForTwoMessage}</h4>
             <span className="line-span"></span>

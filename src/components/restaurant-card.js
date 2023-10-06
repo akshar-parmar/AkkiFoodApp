@@ -1,4 +1,7 @@
 import { baseUrlForCardImage } from "./config";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
+
 
 export const RestaurantCard = (props) => {
   //destructuring the props object
@@ -13,8 +16,9 @@ export const RestaurantCard = (props) => {
             className="img-card"
             src={baseUrlForCardImage + cloudinaryImageId}
             ></img>
+            
             <h4 className="nameRestaurant" key = "heading">{name}</h4>
-            <h4 className={`rating ${avgRatingString < 4 ? 'low-rating' : ''}`} key = "rating-heading">🌟{avgRatingString} stars</h4>
+            <h4 className={`rating ${avgRatingString < 4 ? 'low-rating' : ''}`} key = "rating-heading"><FontAwesomeIcon icon={faStar} style={{ color: 'white' }} /> {avgRatingString}</h4>
             <p className="cuisine-names">{cuisines.join(", ")}</p>
             
       </div>

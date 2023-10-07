@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { baseUrlForCardImage } from "./config";
-import ShimmerUI from "./Shimmer";
+import { ShimmerMenu } from "./ShimmerMenu";
 import {RestaurantMenuCard} from "./Restaurant-menu-card";
 import useRestaurant from "../utils/useRestaurant";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,9 +10,9 @@ const RestaurantMenu = () => {
   const { id } = useParams(); //call use param and get the id using object destructuring
   //calling the custom hooks
   const {restaurant,menuItems} = useRestaurant(id);
-
+  //condition initial : restaurant == null
   return restaurant == null ? (
-    <ShimmerUI />
+    <ShimmerMenu />
   ) : (
     <div className="container-menu">
       <div className="restaurant-banner">

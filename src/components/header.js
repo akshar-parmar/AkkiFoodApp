@@ -33,9 +33,9 @@ return true;
                 <li className = "item"><Link to="/instamart" className='list-item-link'>Instamart</Link></li>
             </ul>
             { isLoggedIn===false?
-            (<button className='login-logout-btn' onClick={()=>{
+            (<Link to ="/login"><button className='login-logout-btn' onClick={()=>{
                 setIsLoggedIn(true);
-            }}>Login</button>)
+            }}>Login</button></Link>)
             :
             (<button className='login-logout-btn' onClick={()=>{
                 setIsLoggedIn(false);
